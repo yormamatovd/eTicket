@@ -1,0 +1,50 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/e_ticket
+    username: postgres
+    password: 2014
+  jpa:
+    hibernate:
+      ddl-auto: update
+#      ddl-auto: create
+    show-sql: true
+    properties:
+      hibernate:
+        enable_lazy_load_no_trans: true
+        connection:
+          charSet: UTF-8
+        hbm2ddl:
+          import_files_sql_extractor: org.hibernate.tool.hbm2ddl.MultipleLinesSqlCommandExtractor
+    open-in-view: true
+  sql:
+    init:
+#      mode: always
+      mode: never
+
+basket:
+  live-time: 60000
+
+jwt:
+  secret-key: whyneedthiswordxaxaxa
+  expire:
+    access_token: 604800000
+#    access_token: 10000
+    refresh_token: 1728000000
+
+verification-code:
+  expire-time: 10800000
+  limit: 5
+
+twilio:
+  account_sid: #sid
+  auth_token: #token
+  phone_number: #number
+
+stripe:
+  secret-key: #secret-key
+
+
+
+
